@@ -16,14 +16,33 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  //your code here
+  if (word.equals(reverse(word)))
+    return true;
+  else if (word.equals(reverse(word)) && word.equals(noSpaces(word)) && word.equals(onlyLetters(word)) )
+    return true;
   return false;
 }
 public String reverse(String str)
 {
-    String sNew = new String();
-    //your code here
-    return sNew;
+    String s = "";
+  for (int i = str.length()-1; i>= 0; i--)
+    s = s + str.substring(i,i+1);
+  return s;
 }
 
+public String noSpaces(String str){
+  String s = "";
+  for (int i = 0; i < str.length();i++)
+    if (Character.isLetter(str.charAt(i)) == true)
+      s = s + str.charAt(i);
+  return s;
+}
+
+public String onlyLetters(String str){
+  String s = "";
+  for (int i = 0; i < str.length();i++)
+    if (Character.isLetter(str.charAt(i))==true)
+      s = s + str.charAt(i);
+    return s;
+}
 
